@@ -34,7 +34,7 @@ function renderDictionary(container,key){
 }
 
 function fetchBooksWithLetter(list,letter){
-    return list.filter(obj => (obj.title).startsWith(letter))
+    return list.filter(obj => (obj.title.toUpperCase()).startsWith(letter.toUpperCase()))
 }
 
 function fetchBooksWithQuery(list,query){
