@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Basic:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+*{
+    font-family: 'Gentium Book Basic', serif;
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    background-color:  #836853;
+    height: 100vh;
+}
+header{
+    width: 100%;
+    color: white;
+    height: 10%;
+}
+
+header img{
+    width: 75px;
+    padding: 0.5rem;
+}
+
+header nav{
+    display: none;
+    position: fixed;
+    bottom: 0px;
+    height: 50px;
+    background-color: white;
+    width: 100%;
+}
+
+header nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0px;
+    margin: 0px;
+}
+header nav ul li{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+header nav ul li svg{
+    width: 17px;
+    height: 17px;
+    margin-bottom: 3px;
+}
+header nav ul li span{
+    color: black;
+}
+
+input#search{
+    padding: 10px;
+    width: 30rem;
+    margin: 1rem;
+    text-align: center;
+
+    border-radius: 1rem;
+    border: none;
+}
+input#search:focus{
+    outline: none;
+}
+
+main{
+    height: 90%;
+    text-align: center;
+}
+main>section{
+    height: 85%;
+}
+
+.book-main-containers{
+    height: 100%;
+    width: 50%;
+}
+.book-main-containers:nth-child(1){
+    float: left;
+}
+.book-main-containers:nth-child(2){
+    float: right;
+}
+.book-main-containers>span{
+    height: 5%;
+    text-align: center;
+    color: white;
+    font-size: 1.25rem;
+}
+.book-container{
+    height: 95%;
+    background-color: #D1C3B7;
+    border-radius: 0rem 1rem 1rem 0rem;
+    margin: 0px 1rem;
+    display: flex;
+}
+
+.dictionary{
+    background-color: #AC9D8E;
+    flex-basis: 7%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.dictionary .item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-weight: bold;
+    width: 100%;
+    flex-grow: 1;
+    transition: all 250ms ease;
+
+    text-decoration: none;
+    color: black;
+}
+.dictionary .item:hover{
+    width: 100%;
+    transform: scale(1.5);
+    flex-grow: 1;
+    color: white;
+    cursor: pointer;
+}
+
+.book-list{
+    flex-basis: 93%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+
+    text-align: left;
+}
+
+.book-list .letter{
+    font-size: 1.8rem;
+    padding: 1rem;
+}
+.dictionary::-webkit-scrollbar{
+    display: none;
+}
+.dictionary{
+    -ms-overflow-style: none;
+    scrollbar-width: none; 
+}
+.book-list::-webkit-scrollbar{
+    width: 1rem;
+}
+.book-list::-webkit-scrollbar-thumb{
+    background: #AC9D8E;
+    border-radius: 1rem;
+}
+.book-list::-webkit-scrollbar-thumb:hover{
+    background: #968471;
+}
+.book-list{
+    scrollbar-width: thin;
+    scrollbar-color: #AC9D8E transparent;
+}
+
+.card-item{
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #AC9D8E;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    overflow: hidden;
+    height: 125px;
+    transition: transform 300ms ease-in-out;
+}
+.card-item:hover{
+    transform: scale(1.025);
+}
+.card-data{
+    width: 95%;
+}
+.card-data p,h3{
+    margin: 0.2rem 0px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.item-control{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -6.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #968471;
+    padding: 0.25rem;
+
+    transition: right 350ms ease;
+}
+.item-control .pointer-control{
+    width: 1.5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.item-control .pointer-control>svg{
+    width: 1rem;
+    height: 1rem;
+}
+.item-control .control-btn{
+    border-radius: 1rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0.5rem 0.25rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+}
+.item-control .control-btn svg{
+    width: 1.5rem;
+    height: 1.5rem;
+    padding-right: .5rem;
+    fill: white;
+}
+.item-control .control-btn.edit{
+    background-color:  #03c03c;
+}
+.item-control .control-btn.edit:hover{
+    background-color:  #028e2c;
+}
+.item-control .control-btn.delete{
+    background-color: #c23b22;
+}
+.item-control .control-btn.delete:hover{
+    background-color: #972e1a;
+}
+.no-data{
+    margin: 1rem;
+}
+
+#add-button{
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #03c03c;
+    padding: 1rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#add-button:hover{
+    background-color:  #028e2c;
+}
+#add-button svg{
+    fill: white;
+    width: 20px;
+    height: 20px;
+}
+
+.pop-up-overlay{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    background-color: rgba(0,0,0,0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop-up{
+    padding: 0rem 0rem 1.5rem 0rem;
+    width: 30%;
+    background-color: #D1C3B7;
+    border-radius: 1rem;
+}
+.pop-up .btn-close{
+    text-align: right;
+}
+.pop-up .btn-close svg{
+    height: 25px;
+    width: 25px;
+    margin: 1rem;
+    fill: #968471;
+    cursor: pointer;
+}
+.pop-up .btn-close svg:hover{
+    fill: #AC9D8E;
+}
+.pop-up .content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pop-up .content form{
+    width: 80%;
+}
+.pop-up .content form input{
+    margin: .5rem 0rem;
+}
+.pop-up .content form input:focus{
+    outline: none;
+}
+.pop-up .content form input[type=text]{
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    text-align: center;
+    border: 1px solid #AC9D8E;
+}
+.pop-up .content form input[type=submit]{
+    width: 100%;
+    border-radius: 1rem;
+    padding: 0.25rem;
+    cursor: pointer;
+    background-color: #968471;
+    color: white;
+    border: 1px solid #AC9D8E;
+}
+.pop-up .content form input[type=submit]:hover{
+    background-color: #AC9D8E;
+}
+.pop-up .content form .error-text{
+    color: red;
+    display: block;
+}
+.delete-confirmation{
+    width: 90%;
+}
+.delete-confirmation h3,h2{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+.delete-confirmation div{
+    display: flex;
+    justify-content: space-evenly;
+}
+.delete-conf-btn{
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    color: white;
+    cursor: pointer;
+}
+#delete-conf-no{
+    background-color: #c23b22;
+}
+#delete-conf-no:hover{
+    background-color: #972e1a;
+}
+#delete-conf-yes{
+    background-color: #03c03c;
+}
+#delete-conf-yes:hover{
+    background-color: #028e2c;
+}
+
+@media (max-width: 768px){
+    header nav{
+        display: block;
+    }
+    input#search{
+        width: 70%
+    }
+    .book-main-containers>span{
+        padding-top: 0px;
+    }
+    .book-main-containers{
+        width: 100%;
+        display: none;
+    }
+    main>section{
+        height: 80%;
+    }
+    #add-button{
+        bottom: 3.5rem;
+        right: 0.5rem;
+    }
+    .active{
+        display: block;
+    }
+    .pop-up{
+        width: 90%;
+    }
+}
